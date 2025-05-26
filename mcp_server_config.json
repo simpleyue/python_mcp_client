@@ -1,0 +1,54 @@
+{
+    "mcpServers": {
+      "mysql": {
+      "autoApprove": [
+        "execute_sql"
+      ],
+      "disabled": false,
+      "timeout": 60,
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/XXXXXXXXXXX",
+        "run",
+        "mysql_mcp_server"
+      ],
+      "env": {
+        "MYSQL_HOST": "XXXXX",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "root",
+        "MYSQL_PASSWORD": "XXXXXXX",
+        "MYSQL_DATABASE": "XXXXXXXXX"
+      },
+      "transportType": "stdio"
+    },
+      "dify-mcp-server": {
+        "autoApprove": [
+          "dify工作流、dify-mcp-server"
+        ],
+        "timeout": 60,
+        "command": "uvx",
+        "args": [
+          "--from",
+          "git+https://github.com/YanxingLiu/dify-mcp-server",
+          "dify_mcp_server"
+        ],
+        "env": {
+          "DIFY_BASE_URL": "http://10.8.167.1/v1",
+          "DIFY_APP_SKS": "XXXXX"
+        },
+        "transportType": "stdio"
+      },
+      "droidmind": {
+        "url": "http://localhost:4256/sse",
+        "disabled": false,
+        "autoApprove": [
+          "connect_device",
+          "device_properties",
+          "screenshot",
+          "list_packages"
+        ],
+        "transportType": "sse"
+      }
+    }
+  }
