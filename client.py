@@ -386,11 +386,11 @@ class MCPClient:
             print("没有可用的工具")
             return
         
-        # print("\n所有可用工具:")
-        # for server_name, tools in self.all_server_tools.items():
-        #     print(f"\n服务器 '{server_name}':")
-        #     for tool in tools:
-        #         print(f"  - {tool.name}: {tool.description}")
+        print("\n所有可用工具:")
+        for server_name, tools in self.all_server_tools.items():
+            print(f"\n服务器 '{server_name}':")
+            for tool in tools:
+                print(f"  - {tool.name}: {tool.description}")
     
     async def cleanup(self):
         """清理资源"""
